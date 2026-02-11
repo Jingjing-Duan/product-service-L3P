@@ -20,6 +20,10 @@ def get_products():
     ]
     return jsonify(products)
 
+@app.route("/health")
+def health():
+    return jsonify({"status": "ok"})
+
 if __name__ == '__main__':
     # Get the port from the environment variable or default to 3030
     port = int(os.getenv('PORT', 3030))
